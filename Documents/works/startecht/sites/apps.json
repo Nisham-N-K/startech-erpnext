@@ -1,0 +1,61 @@
+{
+    "frappe": {
+        "resolution": {
+            "commit_hash": null,
+            "branch": null
+        },
+        "required": [],
+        "idx": 1,
+        "version": "16.0.0-dev"
+    },
+    "erpnext": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "d64cd86f5224f6caefd8c6604d7ca628010a03cb",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "16.0.0-dev"
+    },
+    "ecommerce_integrations": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "7acdf6c8596c3a4f741675d2bb51dab6e6b95b14",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 3,
+        "version": "1.17.0"
+    },
+    "webshop": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "bf61e97ca2fdbf2fe7bb25f3d6a5731040319da9",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 4,
+        "version": "0.0.1"
+    },
+    "payments": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "08da2b2fc390e235949c1c2ee70af7962c5420b6",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 5,
+        "version": "0.0.1"
+    },
+    "portfolio": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "4d1f1e870744c18883ad01e46cc5018682715f00",
+            "branch": "portfolio"
+        },
+        "required": [],
+        "idx": 6,
+        "version": "0.0.1"
+    }
+}

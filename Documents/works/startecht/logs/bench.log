@@ -1,0 +1,407 @@
+2025-08-21 07:03:38,490 DEBUG cd startecht && python3 -m venv env
+2025-08-21 07:03:39,452 DEBUG cd startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet --upgrade pip
+2025-08-21 07:03:39,809 DEBUG cd startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet wheel
+2025-08-21 07:03:40,258 LOG Getting frappe
+2025-08-21 07:03:40,258 DEBUG cd startecht/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2025-08-21 07:03:46,114 LOG Installing frappe
+2025-08-21 07:03:46,136 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet --upgrade -e /Users/mohammednishamnk/Documents/works/startecht/apps/frappe 
+2025-08-21 07:04:14,347 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht/apps/frappe && yarn install --check-files
+2025-08-21 07:04:19,021 DEBUG cd startecht && bench build
+2025-08-21 07:04:19,121 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench build
+2025-08-21 07:04:26,497 LOG setting up backups
+2025-08-21 07:04:29,910 LOG backups were set up
+2025-08-21 07:04:29,910 INFO Bench startecht initialized
+2025-08-21 07:05:41,546 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench new-site yoursite.local
+2025-08-21 07:06:20,149 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench new-site yoursite.local
+2025-08-21 07:08:05,832 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench start
+2025-08-21 07:09:04,357 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench start
+2025-08-21 07:12:07,592 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench start
+2025-08-21 07:12:21,678 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --site yoursite.local clear-cache
+2025-08-21 07:12:30,774 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench start
+2025-08-21 07:12:57,799 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --site yoursite.local clear-cache
+2025-08-21 07:13:52,533 INFO /opt/homebrew/bin/bench start
+2025-08-21 07:15:52,863 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench startecht
+2025-08-21 07:16:03,387 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench start
+2025-08-21 07:16:03,585 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench schedule
+2025-08-21 07:16:03,591 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench worker
+2025-08-21 07:16:03,591 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench serve --port 8000
+2025-08-21 07:16:03,595 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench watch
+2025-08-21 07:19:04,793 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench new-site erpnext.localhost
+2025-08-21 07:20:16,935 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench get-app https://github.com/frappe/erpnext
+2025-08-21 07:20:16,945 LOG Getting erpnext
+2025-08-21 07:20:16,945 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext  --depth 1 --origin upstream
+2025-08-21 07:20:21,382 LOG Installing erpnext
+2025-08-21 07:20:21,382 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet --upgrade -e /Users/mohammednishamnk/Documents/works/startecht/apps/erpnext 
+2025-08-21 07:20:26,539 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht/apps/erpnext && yarn install --check-files
+2025-08-21 07:20:26,717 DEBUG bench build --app erpnext
+2025-08-21 07:20:26,792 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench build --app erpnext
+2025-08-21 07:20:38,259 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --site erpnext.localhost install-app erpnext
+2025-08-21 07:22:34,793 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench start
+2025-08-21 07:22:34,983 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench worker
+2025-08-21 07:22:34,991 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench watch
+2025-08-21 07:22:34,992 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench serve --port 8000
+2025-08-21 07:22:35,004 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench schedule
+2025-08-21 18:00:00,906 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-08-22 00:00:02,427 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-08-22 11:15:28,974 INFO /opt/homebrew/bin/bench start
+2025-08-22 11:15:29,214 INFO /opt/homebrew/bin/bench worker
+2025-08-22 11:15:29,223 INFO /opt/homebrew/bin/bench watch
+2025-08-22 11:15:29,223 INFO /opt/homebrew/bin/bench schedule
+2025-08-22 11:15:29,231 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-08-22 12:00:00,529 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-08-22 12:13:13,996 INFO /opt/homebrew/bin/bench --site erpnext.localhost log
+2025-08-22 12:13:19,867 INFO /opt/homebrew/bin/bench --site erpnext.localhost --force reload-doc website doctype web_page
+2025-08-22 12:13:24,767 INFO /opt/homebrew/bin/bench --site erpnext.localhost clear-cache
+2025-08-23 06:00:00,878 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-08-23 12:00:01,325 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-08-25 12:00:01,320 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-08-25 18:16:14,836 INFO /opt/homebrew/bin/bench restart
+2025-08-25 18:16:40,026 INFO /opt/homebrew/bin/bench start
+2025-08-25 18:16:40,231 INFO /opt/homebrew/bin/bench worker
+2025-08-25 18:16:40,234 INFO /opt/homebrew/bin/bench schedule
+2025-08-25 18:16:40,236 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-08-25 18:16:40,247 INFO /opt/homebrew/bin/bench watch
+2025-08-25 18:24:48,094 INFO /opt/homebrew/bin/bench restart
+2025-08-25 18:24:59,144 INFO /opt/homebrew/bin/bench --site erpnext.localhost clear-cache
+2025-08-25 18:29:57,930 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-25 23:30:13,010 INFO /opt/homebrew/bin/bench restart
+2025-08-25 23:30:19,715 INFO /opt/homebrew/bin/bench --site erpnext.localhost clear-cache
+2025-08-26 11:01:30,656 INFO /opt/homebrew/bin/bench start
+2025-08-26 11:01:30,861 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-08-26 11:01:30,862 INFO /opt/homebrew/bin/bench schedule
+2025-08-26 11:01:30,873 INFO /opt/homebrew/bin/bench worker
+2025-08-26 11:01:30,874 INFO /opt/homebrew/bin/bench watch
+2025-08-26 11:14:35,188 INFO /opt/homebrew/bin/bench start
+2025-08-26 11:14:35,395 INFO /opt/homebrew/bin/bench schedule
+2025-08-26 11:14:35,396 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-08-26 11:14:35,397 INFO /opt/homebrew/bin/bench worker
+2025-08-26 11:14:35,400 INFO /opt/homebrew/bin/bench watch
+2025-08-26 12:00:00,908 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-08-26 18:00:00,546 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-08-26 18:18:22,126 INFO /opt/homebrew/bin/bench --site sitename console
+2025-08-26 18:19:31,994 INFO /opt/homebrew/bin/bench --site startecht console
+2025-08-26 18:20:54,881 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 18:22:45,370 INFO /opt/homebrew/bin/bench --site yoursite.local console
+2025-08-26 18:25:26,317 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 20:18:43,410 INFO /opt/homebrew/bin/bench get-app ecommerce_integrations https://github.com/frappe/ecommerce_integrations
+2025-08-26 20:18:43,419 LOG Getting ecommerce_integrations
+2025-08-26 20:18:43,419 DEBUG cd ./apps && git clone https://github.com/frappe/ecommerce_integrations  --depth 1 --origin upstream
+2025-08-26 20:18:44,552 LOG Installing ecommerce_integrations
+2025-08-26 20:18:44,552 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet --upgrade -e /Users/mohammednishamnk/Documents/works/startecht/apps/ecommerce_integrations 
+2025-08-26 20:18:51,900 DEBUG bench build --app ecommerce_integrations
+2025-08-26 20:18:51,978 INFO /opt/homebrew/bin/bench build --app ecommerce_integrations
+2025-08-26 20:18:57,295 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app ecommerce_integrations
+2025-08-26 20:23:30,130 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app ecommerce_integrations
+2025-08-26 20:25:34,075 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app ecommerce_integrations
+2025-08-26 20:29:41,851 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app ecommerce_integrations
+2025-08-26 20:33:01,642 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app ecommerce_integrations
+2025-08-26 20:33:37,761 INFO /opt/homebrew/bin/bench start
+2025-08-26 20:33:37,986 INFO /opt/homebrew/bin/bench schedule
+2025-08-26 20:33:37,986 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-08-26 20:33:37,990 INFO /opt/homebrew/bin/bench worker
+2025-08-26 20:33:37,993 INFO /opt/homebrew/bin/bench watch
+2025-08-26 20:42:44,557 INFO /opt/homebrew/bin/bench restart
+2025-08-26 20:43:34,245 INFO /opt/homebrew/bin/bench restart
+2025-08-26 20:43:40,110 INFO /opt/homebrew/bin/bench start
+2025-08-26 20:43:40,307 INFO /opt/homebrew/bin/bench worker
+2025-08-26 20:43:40,309 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-08-26 20:43:40,315 INFO /opt/homebrew/bin/bench watch
+2025-08-26 20:43:40,321 INFO /opt/homebrew/bin/bench schedule
+2025-08-26 20:48:39,734 INFO /opt/homebrew/bin/bench --site yoursite.localhost list-doctypes
+2025-08-26 20:48:40,123 INFO /opt/homebrew/bin/bench --site yoursite.localhost list-doctypes
+2025-08-26 20:48:40,405 INFO /opt/homebrew/bin/bench --site yoursite.localhost list-doctypes
+2025-08-26 20:48:40,687 INFO /opt/homebrew/bin/bench --site yoursite.localhost list-doctypes
+2025-08-26 20:51:31,795 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 20:52:20,627 INFO /opt/homebrew/bin/bench --site erpnext.localhost list-apps
+2025-08-26 20:52:47,135 INFO /opt/homebrew/bin/bench get-app ecommerce_integrations https://github.com/frappe/ecommerce_integrations
+2025-08-26 20:53:17,885 INFO App moved from apps/ecommerce_integrations to archived/apps/ecommerce_integrations-2025-08-26
+2025-08-26 20:53:17,900 LOG Getting ecommerce_integrations
+2025-08-26 20:53:17,900 DEBUG cd ./apps && git clone https://github.com/frappe/ecommerce_integrations  --depth 1 --origin upstream
+2025-08-26 20:53:19,062 LOG Installing ecommerce_integrations
+2025-08-26 20:53:19,062 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet --upgrade -e /Users/mohammednishamnk/Documents/works/startecht/apps/ecommerce_integrations 
+2025-08-26 20:53:20,274 DEBUG bench build --app ecommerce_integrations
+2025-08-26 20:53:20,355 INFO /opt/homebrew/bin/bench build --app ecommerce_integrations
+2025-08-26 20:53:29,403 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app ecommerce_integrations
+2025-08-26 20:54:21,414 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 20:54:50,299 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 20:55:34,435 INFO /opt/homebrew/bin/bench --site erpnext.localhost uninstall-app ecommerce_integrations --force
+2025-08-26 20:55:45,445 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 20:56:06,357 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app ecommerce_integrations
+2025-08-26 20:56:16,813 INFO /opt/homebrew/bin/bench --site erpnext.localhost clear-cache
+2025-08-26 20:56:17,338 INFO /opt/homebrew/bin/bench build
+2025-08-26 20:56:59,520 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 20:58:06,463 INFO /opt/homebrew/bin/bench --site erpnext.localhost migrate
+2025-08-26 20:58:14,298 INFO /opt/homebrew/bin/bench --site erpnext.localhost clear-cache
+2025-08-26 20:58:19,061 INFO /opt/homebrew/bin/bench restart
+2025-08-26 20:58:34,210 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 20:59:06,471 INFO /opt/homebrew/bin/bench --site erpnext.localhost migrate
+2025-08-26 20:59:20,859 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 21:00:12,314 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 21:01:12,592 INFO /opt/homebrew/bin/bench get-app erpnext_commerce https://github.com/frappe/erpnext_commerce
+2025-08-26 21:01:12,601 LOG Getting erpnext_commerce
+2025-08-26 21:01:12,601 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext_commerce  --depth 1 --origin upstream
+2025-08-26 21:01:13,361 WARNING cd ./apps && git clone https://github.com/frappe/erpnext_commerce  --depth 1 --origin upstream executed with exit code 128
+2025-08-26 21:01:13,361 WARNING /opt/homebrew/bin/bench get-app erpnext_commerce https://github.com/frappe/erpnext_commerce executed with exit code 1
+2025-08-26 21:01:21,783 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app erpnext_commerce
+2025-08-26 21:01:42,581 INFO /opt/homebrew/bin/bench get-app erpnext_commerce https://github.com/frappe/erpnext_commerce
+2025-08-26 21:01:42,590 LOG Getting erpnext_commerce
+2025-08-26 21:01:42,590 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext_commerce  --depth 1 --origin upstream
+2025-08-26 21:01:43,251 WARNING cd ./apps && git clone https://github.com/frappe/erpnext_commerce  --depth 1 --origin upstream executed with exit code 128
+2025-08-26 21:01:43,251 WARNING /opt/homebrew/bin/bench get-app erpnext_commerce https://github.com/frappe/erpnext_commerce executed with exit code 1
+2025-08-26 21:08:00,388 INFO /opt/homebrew/bin/bench --site erpnext.localhost console
+2025-08-26 21:11:37,400 INFO /opt/homebrew/bin/bench get-app webshop https://github.com/frappe/webshop
+2025-08-26 21:11:37,411 LOG Getting webshop
+2025-08-26 21:11:37,411 DEBUG cd ./apps && git clone https://github.com/frappe/webshop  --depth 1 --origin upstream
+2025-08-26 21:11:38,588 LOG Installing webshop
+2025-08-26 21:11:38,588 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet --upgrade -e /Users/mohammednishamnk/Documents/works/startecht/apps/webshop 
+2025-08-26 21:11:39,432 DEBUG bench build --app webshop
+2025-08-26 21:11:39,497 INFO /opt/homebrew/bin/bench build --app webshop
+2025-08-26 21:11:47,206 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app webshop
+2025-08-26 21:12:37,635 INFO /opt/homebrew/bin/bench get-app payments https://github.com/frappe/payments
+2025-08-26 21:12:37,645 LOG Getting payments
+2025-08-26 21:12:37,645 DEBUG cd ./apps && git clone https://github.com/frappe/payments  --depth 1 --origin upstream
+2025-08-26 21:12:38,715 LOG Installing payments
+2025-08-26 21:12:38,715 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet --upgrade -e /Users/mohammednishamnk/Documents/works/startecht/apps/payments 
+2025-08-26 21:12:43,331 DEBUG bench build --app payments
+2025-08-26 21:12:43,395 INFO /opt/homebrew/bin/bench build --app payments
+2025-08-26 21:12:49,734 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app payments
+2025-08-26 21:12:57,847 INFO /opt/homebrew/bin/bench --site erpnext.localhost install-app webshop
+2025-08-26 21:13:07,262 INFO /opt/homebrew/bin/bench restart
+2025-08-26 21:13:59,445 INFO /opt/homebrew/bin/bench start
+2025-08-26 21:14:31,706 INFO /opt/homebrew/bin/bench start
+2025-08-26 21:14:31,891 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-08-26 21:14:31,895 INFO /opt/homebrew/bin/bench schedule
+2025-08-26 21:14:31,896 INFO /opt/homebrew/bin/bench watch
+2025-08-26 21:14:31,901 INFO /opt/homebrew/bin/bench worker
+2025-08-28 07:08:16,683 INFO /opt/homebrew/bin/bench start
+2025-08-28 07:08:16,922 INFO /opt/homebrew/bin/bench worker
+2025-08-28 07:08:16,923 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-08-28 07:08:16,933 INFO /opt/homebrew/bin/bench schedule
+2025-08-28 07:08:16,933 INFO /opt/homebrew/bin/bench watch
+2025-08-28 12:00:01,304 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-08-31 18:00:01,067 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-02 00:00:01,028 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-04 00:00:01,562 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-05 00:00:01,158 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-05 15:47:15,398 INFO /opt/homebrew/bin/bench start
+2025-09-05 15:47:15,668 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-05 15:47:15,670 INFO /opt/homebrew/bin/bench worker
+2025-09-05 15:47:15,680 INFO /opt/homebrew/bin/bench schedule
+2025-09-05 15:47:15,683 INFO /opt/homebrew/bin/bench watch
+2025-09-05 19:29:50,417 INFO /opt/homebrew/bin/bench new-app portfolio
+2025-09-05 19:29:50,420 LOG creating new app portfolio
+2025-09-05 19:48:17,962 LOG Installing portfolio
+2025-09-05 19:48:17,964 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet --upgrade -e /Users/mohammednishamnk/Documents/works/startecht/apps/portfolio 
+2025-09-05 19:48:19,142 DEBUG bench build --app portfolio
+2025-09-05 19:48:19,219 INFO /opt/homebrew/bin/bench build --app portfolio
+2025-09-05 19:51:51,182 INFO /opt/homebrew/bin/bench --site yoursite.local install-app portfolio
+2025-09-05 19:51:59,477 INFO /opt/homebrew/bin/bench start
+2025-09-05 19:51:59,665 INFO /opt/homebrew/bin/bench schedule
+2025-09-05 19:51:59,667 INFO /opt/homebrew/bin/bench watch
+2025-09-05 19:51:59,672 INFO /opt/homebrew/bin/bench worker
+2025-09-05 19:51:59,682 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-05 19:58:46,606 INFO /opt/homebrew/bin/bench --site yoursite.local install-app portfolio
+2025-09-05 19:59:36,228 INFO /opt/homebrew/bin/bench start
+2025-09-05 19:59:36,418 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-05 19:59:36,422 INFO /opt/homebrew/bin/bench worker
+2025-09-05 19:59:36,423 INFO /opt/homebrew/bin/bench watch
+2025-09-05 19:59:36,425 INFO /opt/homebrew/bin/bench schedule
+2025-09-05 20:06:51,640 INFO /opt/homebrew/bin/bench --site yoursite.local reinstall
+2025-09-05 20:09:26,019 INFO /opt/homebrew/bin/bench new-site portfolio.local
+2025-09-05 20:11:54,206 INFO /opt/homebrew/bin/bench new-site portfolio.local
+2025-09-05 20:12:20,822 INFO /opt/homebrew/bin/bench new-site boss_portfolio.local
+2025-09-05 20:15:08,112 INFO /opt/homebrew/bin/bench start
+2025-09-05 20:15:08,328 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-05 20:15:08,331 INFO /opt/homebrew/bin/bench worker
+2025-09-05 20:15:08,337 INFO /opt/homebrew/bin/bench watch
+2025-09-05 20:15:08,350 INFO /opt/homebrew/bin/bench schedule
+2025-09-05 20:20:58,318 INFO /opt/homebrew/bin/bench new-app portfolio
+2025-09-05 20:20:58,321 LOG creating new app portfolio
+2025-09-05 21:56:10,737 LOG Installing portfolio
+2025-09-05 21:56:10,739 DEBUG cd /Users/mohammednishamnk/Documents/works/startecht && /Users/mohammednishamnk/Documents/works/startecht/env/bin/python -m pip install --quiet --upgrade -e /Users/mohammednishamnk/Documents/works/startecht/apps/portfolio 
+2025-09-05 21:56:11,952 DEBUG bench build --app portfolio
+2025-09-05 21:56:12,036 INFO /opt/homebrew/bin/bench build --app portfolio
+2025-09-05 21:57:44,122 INFO /opt/homebrew/bin/bench --site yoursite.local install-app portfolio
+2025-09-05 22:13:25,149 INFO /opt/homebrew/bin/bench --site yoursite.local clear-cache
+2025-09-05 22:13:25,905 INFO /opt/homebrew/bin/bench --site yoursite.local build
+2025-09-05 22:14:08,266 INFO /opt/homebrew/bin/bench start
+2025-09-05 22:14:34,339 INFO /opt/homebrew/bin/bench start
+2025-09-05 22:16:35,699 INFO /opt/homebrew/bin/bench stop
+2025-09-05 22:17:07,070 INFO /opt/homebrew/bin/bench start
+2025-09-05 22:17:07,282 INFO /opt/homebrew/bin/bench schedule
+2025-09-05 22:17:07,283 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-05 22:17:07,294 INFO /opt/homebrew/bin/bench watch
+2025-09-05 22:17:07,300 INFO /opt/homebrew/bin/bench worker
+2025-09-06 17:14:52,070 INFO /opt/homebrew/bin/bench start
+2025-09-06 17:14:52,301 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-06 17:14:52,303 INFO /opt/homebrew/bin/bench schedule
+2025-09-06 17:14:52,307 INFO /opt/homebrew/bin/bench watch
+2025-09-06 17:14:52,308 INFO /opt/homebrew/bin/bench worker
+2025-09-06 18:00:00,855 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-08 12:00:00,860 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-08 12:26:55,108 INFO /opt/homebrew/bin/bench start
+2025-09-08 12:26:55,322 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-08 12:26:55,325 INFO /opt/homebrew/bin/bench worker
+2025-09-08 12:26:55,327 INFO /opt/homebrew/bin/bench watch
+2025-09-08 12:26:55,331 INFO /opt/homebrew/bin/bench schedule
+2025-09-09 13:12:26,153 INFO /opt/homebrew/bin/bench build
+2025-09-09 13:12:47,204 INFO /opt/homebrew/bin/bench start
+2025-09-09 13:12:47,399 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-09 13:12:47,403 INFO /opt/homebrew/bin/bench schedule
+2025-09-09 13:12:47,403 INFO /opt/homebrew/bin/bench watch
+2025-09-09 13:12:47,421 INFO /opt/homebrew/bin/bench worker
+2025-09-10 12:00:01,376 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-11 11:54:27,836 INFO /opt/homebrew/bin/bench start
+2025-09-11 11:54:28,068 INFO /opt/homebrew/bin/bench watch
+2025-09-11 11:54:28,073 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-11 11:54:28,073 INFO /opt/homebrew/bin/bench worker
+2025-09-11 11:54:28,081 INFO /opt/homebrew/bin/bench schedule
+2025-09-11 12:04:58,335 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-12 18:00:01,196 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-13 11:35:10,748 INFO /opt/homebrew/bin/bench start
+2025-09-13 11:35:10,964 INFO /opt/homebrew/bin/bench watch
+2025-09-13 11:35:10,966 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-13 11:35:10,972 INFO /opt/homebrew/bin/bench schedule
+2025-09-13 11:35:10,980 INFO /opt/homebrew/bin/bench worker
+2025-09-13 11:37:35,617 INFO /opt/homebrew/bin/bench start
+2025-09-13 11:37:35,812 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-13 11:37:35,817 INFO /opt/homebrew/bin/bench schedule
+2025-09-13 11:37:35,821 INFO /opt/homebrew/bin/bench watch
+2025-09-13 11:37:35,822 INFO /opt/homebrew/bin/bench worker
+2025-09-13 11:43:57,629 INFO /opt/homebrew/bin/bench build
+2025-09-13 11:44:12,564 INFO /opt/homebrew/bin/bench clear-cache
+2025-09-13 11:44:12,892 INFO /opt/homebrew/bin/bench restart
+2025-09-13 11:44:28,307 INFO /opt/homebrew/bin/bench clear-cache
+2025-09-13 11:45:00,033 INFO /opt/homebrew/bin/bench --site site1.local clear-cache
+2025-09-13 11:45:16,143 INFO /opt/homebrew/bin/bench clear-cache --help
+2025-09-13 11:45:32,085 INFO /opt/homebrew/bin/bench clear-cache
+2025-09-13 11:45:42,202 INFO /opt/homebrew/bin/bench --site all clear-cache
+2025-09-13 11:45:54,180 INFO /opt/homebrew/bin/bench --site site1.local build
+2025-09-13 11:46:01,012 INFO /opt/homebrew/bin/bench --site site1.local clear-website-cache
+2025-09-13 11:46:01,343 INFO /opt/homebrew/bin/bench restart
+2025-09-14 10:30:03,487 INFO /opt/homebrew/bin/bench version
+2025-09-14 12:01:30,582 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-15 12:00:01,053 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-16 00:00:01,077 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-16 12:00:01,384 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-16 18:00:01,511 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-17 00:00:01,222 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-17 11:32:41,025 INFO /opt/homebrew/bin/bench start
+2025-09-17 11:32:41,311 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-17 11:32:41,315 INFO /opt/homebrew/bin/bench schedule
+2025-09-17 11:32:41,317 INFO /opt/homebrew/bin/bench watch
+2025-09-17 11:32:41,330 INFO /opt/homebrew/bin/bench worker
+2025-09-17 12:00:00,879 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-17 18:00:01,031 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-18 00:02:26,567 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-18 12:01:18,377 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-18 18:00:01,425 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-19 00:00:01,359 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-19 12:00:01,196 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-19 18:00:00,945 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-20 00:00:00,780 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-20 12:00:00,601 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-20 18:00:00,974 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-21 00:00:01,200 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-21 06:00:00,434 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-21 12:00:01,153 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-23 12:06:02,115 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-23 18:00:01,210 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-24 12:00:01,005 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-25 12:00:00,580 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-27 18:00:01,134 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-29 00:00:01,437 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-29 20:24:45,042 INFO /opt/homebrew/bin/bench start
+2025-09-29 20:24:45,302 INFO /opt/homebrew/bin/bench schedule
+2025-09-29 20:24:45,308 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-29 20:24:45,308 INFO /opt/homebrew/bin/bench watch
+2025-09-29 20:24:45,308 INFO /opt/homebrew/bin/bench worker
+2025-09-30 11:36:01,533 INFO /opt/homebrew/bin/bench start
+2025-09-30 11:38:23,281 INFO /opt/homebrew/bin/bench start
+2025-09-30 11:45:23,674 INFO /opt/homebrew/bin/bench stop
+2025-09-30 11:45:30,352 INFO /opt/homebrew/bin/bench start
+2025-09-30 11:50:04,901 INFO /opt/homebrew/bin/bench start
+2025-09-30 11:51:03,826 INFO /opt/homebrew/bin/bench start
+2025-09-30 11:51:04,126 INFO /opt/homebrew/bin/bench watch
+2025-09-30 11:51:04,128 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 11:51:04,129 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 11:51:04,130 INFO /opt/homebrew/bin/bench worker
+2025-09-30 11:51:55,092 INFO /opt/homebrew/bin/bench start --port 8080
+2025-09-30 11:51:55,100 WARNING /opt/homebrew/bin/bench start --port 8080 executed with exit code 2
+2025-09-30 11:52:58,291 INFO /opt/homebrew/bin/bench stop
+2025-09-30 12:00:00,846 INFO /Users/mohammednishamnk/frappe-bench-env/bin/bench --verbose --site all backup
+2025-09-30 12:00:47,202 INFO /opt/homebrew/bin/bench start
+2025-09-30 12:00:47,432 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 12:00:47,433 INFO /opt/homebrew/bin/bench watch
+2025-09-30 12:00:47,436 INFO /opt/homebrew/bin/bench worker
+2025-09-30 12:00:47,440 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 12:00:56,223 INFO /opt/homebrew/bin/bench start
+2025-09-30 12:00:56,437 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 12:00:56,442 INFO /opt/homebrew/bin/bench worker
+2025-09-30 12:00:56,443 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 12:00:56,446 INFO /opt/homebrew/bin/bench watch
+2025-09-30 12:03:53,652 INFO /opt/homebrew/bin/bench start
+2025-09-30 12:03:53,908 INFO /opt/homebrew/bin/bench watch
+2025-09-30 12:03:53,914 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 12:03:53,919 INFO /opt/homebrew/bin/bench worker
+2025-09-30 12:03:53,924 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 12:08:42,744 INFO /opt/homebrew/bin/bench start
+2025-09-30 12:08:43,024 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 12:08:43,024 INFO /opt/homebrew/bin/bench watch
+2025-09-30 12:08:43,026 INFO /opt/homebrew/bin/bench worker
+2025-09-30 12:08:43,034 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 12:09:54,173 INFO /opt/homebrew/bin/bench start
+2025-09-30 12:09:54,419 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 12:09:54,424 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 12:09:54,426 INFO /opt/homebrew/bin/bench worker
+2025-09-30 12:09:54,429 INFO /opt/homebrew/bin/bench watch
+2025-09-30 12:12:40,431 INFO /opt/homebrew/bin/bench start
+2025-09-30 12:12:40,645 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 12:12:40,647 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 12:12:40,647 INFO /opt/homebrew/bin/bench watch
+2025-09-30 12:12:40,658 INFO /opt/homebrew/bin/bench worker
+2025-09-30 15:08:32,220 INFO /opt/homebrew/bin/bench start
+2025-09-30 15:08:32,462 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 15:08:32,470 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 15:08:32,471 INFO /opt/homebrew/bin/bench watch
+2025-09-30 15:08:32,478 INFO /opt/homebrew/bin/bench worker
+2025-09-30 15:08:48,386 INFO /opt/homebrew/bin/bench start
+2025-09-30 15:08:48,578 INFO /opt/homebrew/bin/bench watch
+2025-09-30 15:08:48,585 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 15:08:48,586 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 15:08:48,596 INFO /opt/homebrew/bin/bench worker
+2025-09-30 15:09:10,795 INFO /opt/homebrew/bin/bench restart
+2025-09-30 15:09:14,045 INFO /opt/homebrew/bin/bench start
+2025-09-30 15:09:14,269 INFO /opt/homebrew/bin/bench watch
+2025-09-30 15:09:14,276 INFO /opt/homebrew/bin/bench worker
+2025-09-30 15:09:14,276 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 15:09:14,279 INFO /opt/homebrew/bin/bench schedule
+2025-09-30 15:19:20,184 INFO /opt/homebrew/bin/bench start
+2025-09-30 15:19:20,454 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-09-30 15:19:20,457 INFO /opt/homebrew/bin/bench worker
+2025-09-30 15:19:20,457 INFO /opt/homebrew/bin/bench watch
+2025-09-30 15:19:20,458 INFO /opt/homebrew/bin/bench schedule
+2025-10-01 20:19:11,482 INFO /opt/homebrew/bin/bench start
+2025-10-01 20:19:11,731 INFO /opt/homebrew/bin/bench watch
+2025-10-01 20:19:11,737 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-10-01 20:19:11,740 INFO /opt/homebrew/bin/bench schedule
+2025-10-01 20:19:11,745 INFO /opt/homebrew/bin/bench worker
+2025-10-01 20:29:03,086 INFO /opt/homebrew/bin/bench start --verbose
+2025-10-01 20:29:03,091 WARNING /opt/homebrew/bin/bench start --verbose executed with exit code 2
+2025-10-01 20:41:27,994 INFO /opt/homebrew/bin/bench restart
+2025-10-01 20:41:36,707 INFO /opt/homebrew/bin/bench start
+2025-10-01 20:41:36,932 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-10-01 20:41:36,933 INFO /opt/homebrew/bin/bench watch
+2025-10-01 20:41:36,933 INFO /opt/homebrew/bin/bench worker
+2025-10-01 20:41:36,948 INFO /opt/homebrew/bin/bench schedule
+2025-10-01 21:02:16,248 INFO /opt/homebrew/bin/bench start
+2025-10-01 21:02:16,480 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-10-01 21:02:16,481 INFO /opt/homebrew/bin/bench worker
+2025-10-01 21:02:16,482 INFO /opt/homebrew/bin/bench watch
+2025-10-01 21:02:16,485 INFO /opt/homebrew/bin/bench schedule
+2025-10-01 21:40:07,191 INFO /opt/homebrew/bin/bench restart
+2025-10-01 21:40:11,796 INFO /opt/homebrew/bin/bench start
+2025-10-01 21:40:12,081 INFO /opt/homebrew/bin/bench watch
+2025-10-01 21:40:12,084 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-10-01 21:40:12,091 INFO /opt/homebrew/bin/bench schedule
+2025-10-01 21:40:12,097 INFO /opt/homebrew/bin/bench worker

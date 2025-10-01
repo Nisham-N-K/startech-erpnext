@@ -1,0 +1,90 @@
+2025-08-25 23:30:04,254 INFO ipython === bench console session ===
+2025-08-25 23:30:04,254 INFO ipython frappe.get_all("Web Page", fields=["name", "route"])
+2025-08-25 23:30:04,254 INFO ipython page = frappe.get_doc("Web Page", "startech")
+page.context_script
+2025-08-25 23:30:04,254 INFO ipython page.context_script = ""
+page.save()
+frappe.db.commit()
+2025-08-25 23:30:04,254 INFO ipython page.template
+page.dynamic_route
+2025-08-25 23:30:04,254 INFO ipython page.web_template
+2025-08-25 23:30:04,254 INFO ipython page.main_section
+2025-08-25 23:30:04,254 INFO ipython page.content
+2025-08-25 23:30:04,254 INFO ipython page.as_dict().keys()
+2025-08-25 23:30:04,254 INFO ipython page.main_section_md
+2025-08-25 23:30:04,254 INFO ipython page.main_section_html
+2025-08-25 23:30:04,254 INFO ipython page.header
+2025-08-25 23:30:04,254 INFO ipython page.page_blocks
+2025-08-25 23:30:04,254 INFO ipython for block in page.page_blocks:
+    b = frappe.get_doc("Web Page Block", block.name)
+    print("---- Block:", block.name, "----")
+    print(b.as_dict().keys())
+    print(b.web_template)
+    print(b.web_template_values)
+    print("================================")
+2025-08-25 23:30:04,254 INFO ipython for block in page.page_blocks:
+    b = frappe.get_doc("Web Page Block", block.name)
+    if not b.web_template:
+        print("Deleting broken block:", block.name)
+        b.delete()
+frappe.db.commit()
+2025-08-25 23:30:04,255 INFO ipython === session end ===
+2025-08-26 18:21:58,114 INFO ipython === bench console session ===
+2025-08-26 18:21:58,114 INFO ipython import frappe
+frappe.db.set_value("E Commerce Settings", None, "enabled", 1)
+frappe.db.set_value("Shopping Cart Settings", None, "enabled", 1)
+frappe.db.commit()
+2025-08-26 18:21:58,115 INFO ipython frappe.db.set_value("E Commerce Settings", None, "enabled", 1)
+2025-08-26 18:21:58,115 INFO ipython === session end ===
+2025-08-26 20:18:34,586 INFO ipython === bench console session ===
+2025-08-26 20:18:34,588 INFO ipython frappe.db.set_value("E Commerce Settings", None, "enabled", 1)
+2025-08-26 20:18:34,588 INFO ipython frappe.db.set_value("Website Settings", None, "show_website", 1)
+frappe.db.set_value("Shopping Cart Settings", None, "enabled", 1)
+frappe.db.commit()
+2025-08-26 20:18:34,588 INFO ipython # Enable cart + checkout
+frappe.db.set_value("Shopping Cart Settings", None, "enabled", 1)
+frappe.db.set_value("Shopping Cart Settings", None, "enable_checkout", 1)
+
+# Set default price list (replace 'Standard Selling' with your Price List name)
+frappe.db.set_value("Shopping Cart Settings", None, "price_list", "Standard Selling")
+
+frappe.db.commit()
+2025-08-26 20:18:34,588 INFO ipython [x.name for x in frappe.get_all("DocType") if "Cart" in x.name or "Shop" in x.name or "Website" in x.name]
+2025-08-26 20:18:34,588 INFO ipython ls apps/erpnext/erpnext/e_commerce
+2025-08-26 20:18:34,588 INFO ipython === session end ===
+2025-08-26 20:52:19,092 INFO ipython === bench console session ===
+2025-08-26 20:52:19,093 INFO ipython frappe.get_all("DocType", filters={"name": ["like", "%Webshop%"]})
+frappe.get_all("DocType", filters={"name": ["like", "%Shopping%"]})
+frappe.get_all("DocType", filters={"name": ["like", "%Wishlist%"]})
+frappe.get_all("DocType", filters={"name": ["like", "%Payment%"]})
+2025-08-26 20:52:19,093 INFO ipython === session end ===
+2025-08-26 20:54:48,686 INFO ipython === bench console session ===
+2025-08-26 20:54:48,686 INFO ipython frappe.get_all("Module Def", filters={"module_name": "Ecommerce Integrations"})
+2025-08-26 20:54:48,686 INFO ipython === session end ===
+2025-08-26 20:55:32,910 INFO ipython === bench console session ===
+2025-08-26 20:55:32,911 INFO ipython frappe.delete_doc("Module Def", "Ecommerce Integrations")
+2025-08-26 20:55:32,911 INFO ipython frappe.delete_doc("Module Def", "Ecommerce Integrations")
+frappe.db.commit()
+2025-08-26 20:55:32,911 INFO ipython === session end ===
+2025-08-26 20:56:04,543 INFO ipython === bench console session ===
+2025-08-26 20:56:04,543 INFO ipython frappe.get_all("Module Def", filters={"module_name": "Ecommerce Integrations"})
+2025-08-26 20:56:04,543 INFO ipython === session end ===
+2025-08-26 20:58:05,120 INFO ipython === bench console session ===
+2025-08-26 20:58:05,122 INFO ipython frappe.get_all("DocType", filters={"name": ["like", "%Webshop%"]})
+frappe.get_all("DocType", filters={"name": ["like", "%Shopping%"]})
+frappe.get_all("DocType", filters={"name": ["like", "%Wishlist%"]})
+frappe.get_all("DocType", filters={"name": ["like", "%Payment%"]})
+2025-08-26 20:58:05,122 INFO ipython === session end ===
+2025-08-26 20:59:05,120 INFO ipython === bench console session ===
+2025-08-26 20:59:05,121 INFO ipython frappe.get_all("DocType", filters={"module": "Ecommerce Integrations"})
+2025-08-26 20:59:05,121 INFO ipython === session end ===
+2025-08-26 21:00:10,213 INFO ipython === bench console session ===
+2025-08-26 21:00:10,213 INFO ipython [x.name for x in frappe.get_all("Module Def", filters={"app_name": "ecommerce_integrations"})]
+2025-08-26 21:00:10,213 INFO ipython === session end ===
+2025-08-26 21:01:11,078 INFO ipython === bench console session ===
+2025-08-26 21:01:11,079 INFO ipython === session end ===
+2025-08-26 21:11:13,822 INFO ipython === bench console session ===
+2025-08-26 21:11:13,824 INFO ipython frappe.get_all("DocType", filters={"name": ["like", "%Webshop Settings%"]})
+2025-08-26 21:11:13,824 INFO ipython frappe.get_all("DocType", filters={"name": ["like", "%Shopping Cart Settings%"]})
+frappe.get_all("DocType", filters={"name": ["like", "%Wishlist%"]})
+2025-08-26 21:11:13,824 INFO ipython === session end ===

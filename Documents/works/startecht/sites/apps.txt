@@ -1,0 +1,6 @@
+frappe
+payments
+erpnext
+webshop
+portfolio
+ecommerce_integrations

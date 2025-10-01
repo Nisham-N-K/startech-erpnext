@@ -1,0 +1,6 @@
+2025-08-26 18:25:24,823 INFO ipython === bench console session ===
+2025-08-26 18:25:24,823 INFO ipython import frappe
+frappe.db.set_value("E Commerce Settings", None, "enabled", 1)
+frappe.db.set_value("Shopping Cart Settings", None, "enabled", 1)
+frappe.db.commit()
+2025-08-26 18:25:24,823 INFO ipython === session end ===
