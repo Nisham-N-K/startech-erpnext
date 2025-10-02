@@ -1,199 +1,4 @@
-2025-08-25 23:34:06,524 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
-    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
-    val = generator()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
-    return dispatch(args[0])(*args, **kw)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
-    controller = get_controller(doctype)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
-    result = self.get_values(
-    	doctype,
-    ...<13 lines>...
-    	wait=wait,
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
-    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
-    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
-    self.connect()
-    ~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
-    self.get_connection()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
-    conn = self._get_connection()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
-    return self.create_connection()
-           ~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
-    return MySQLdb.connect(**self.get_connection_settings())
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
-    return Connection(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
-    super().__init__(*args, **kwargs2)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-MySQLdb.OperationalError: (2002, "Can't connect to server on '127.0.0.1' (36)")
-2025-08-29 00:21:25,265 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
-    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
-    val = generator()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
-    return dispatch(args[0])(*args, **kw)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
-    controller = get_controller(doctype)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
-    result = self.get_values(
-    	doctype,
-    ...<13 lines>...
-    	wait=wait,
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
-    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
-    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
-    self.connect()
-    ~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
-    self.get_connection()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
-    conn = self._get_connection()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
-    return self.create_connection()
-           ~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
-    return MySQLdb.connect(**self.get_connection_settings())
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
-    return Connection(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
-    super().__init__(*args, **kwargs2)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-MySQLdb.OperationalError: (2002, "Can't connect to server on '127.0.0.1' (36)")
-2025-09-14 09:34:00,599 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,600 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,600 ERROR scheduler Skipped queueing ecommerce_integrations.unicommerce.status_updater.update_shipping_package_status because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,605 ERROR scheduler Skipped queueing ecommerce_integrations.zenoti.doctype.zenoti_settings.zenoti_settings.sync_invoices because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,606 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,606 ERROR scheduler Skipped queueing ecommerce_integrations.unicommerce.status_updater.update_sales_order_status because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,606 ERROR scheduler Skipped queueing ecommerce_integrations.unicommerce.product.upload_new_items because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,607 ERROR scheduler Skipped queueing frappe.oauth.delete_oauth2_data because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,607 ERROR scheduler Skipped queueing frappe.desk.form.document_follow.send_hourly_updates because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,608 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,608 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,608 ERROR scheduler Skipped queueing erpnext.erpnext_integrations.doctype.plaid_settings.plaid_settings.automatic_synchronization because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,609 ERROR scheduler Skipped queueing erpnext.utilities.doctype.video.video.update_youtube_data because it was found in queue for erpnext.localhost
-2025-09-14 09:34:00,609 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.collect_project_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,702 ERROR scheduler Skipped queueing erpnext.crm.doctype.email_campaign.email_campaign.set_email_campaign_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,703 ERROR scheduler Skipped queueing frappe.oauth.delete_oauth2_data because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,703 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,711 ERROR scheduler Skipped queueing erpnext.utilities.doctype.video.video.update_youtube_data because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,711 ERROR scheduler Skipped queueing frappe.core.doctype.user_invitation.user_invitation.mark_expired_invitations because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,711 ERROR scheduler Skipped queueing frappe.sessions.clear_expired_sessions because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,711 ERROR scheduler Skipped queueing erpnext.setup.doctype.company.company.cache_companies_monthly_sales_history because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,712 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.project_status_update_reminder because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,712 ERROR scheduler Skipped queueing frappe.automation.doctype.auto_repeat.auto_repeat.make_auto_repeat_entry because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,712 ERROR scheduler Skipped queueing erpnext.accounts.doctype.fiscal_year.fiscal_year.auto_create_fiscal_year because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,712 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_daily_alerts because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,713 ERROR scheduler Skipped queueing frappe.core.doctype.log_settings.log_settings.run_log_clean_up because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,713 ERROR scheduler Skipped queueing erpnext.stock.doctype.serial_no.serial_no.update_maintenance_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,713 ERROR scheduler Skipped queueing erpnext.accounts.doctype.process_statement_of_accounts.process_statement_of_accounts.send_auto_email because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,713 ERROR scheduler Skipped queueing erpnext.quality_management.doctype.quality_review.quality_review.review because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,714 ERROR scheduler Skipped queueing erpnext.crm.doctype.contract.contract.update_status_for_contracts because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,714 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.send_project_status_email_to_users because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,714 ERROR scheduler Skipped queueing erpnext.erpnext_integrations.doctype.plaid_settings.plaid_settings.automatic_synchronization because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,714 ERROR scheduler Skipped queueing frappe.email.doctype.auto_email_report.auto_email_report.send_daily because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,715 ERROR scheduler Skipped queueing erpnext.assets.doctype.asset.asset.make_post_gl_entry because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,715 ERROR scheduler Skipped queueing frappe.desk.notifications.clear_notifications because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,715 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,716 ERROR scheduler Skipped queueing erpnext.buying.doctype.supplier_quotation.supplier_quotation.set_expired_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,716 ERROR scheduler Skipped queueing ecommerce_integrations.unicommerce.product.upload_new_items because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,716 ERROR scheduler Skipped queueing erpnext.support.doctype.issue.issue.auto_close_tickets because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,716 ERROR scheduler Skipped queueing erpnext.controllers.accounts_controller.update_invoice_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,716 ERROR scheduler Skipped queueing erpnext.crm.doctype.email_campaign.email_campaign.send_email_to_leads_or_contacts because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,717 ERROR scheduler Skipped queueing frappe.core.doctype.prepared_report.prepared_report.expire_stalled_report because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,717 ERROR scheduler Skipped queueing erpnext.buying.doctype.supplier_scorecard.supplier_scorecard.refresh_scorecards because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,717 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.repost_entries because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,717 ERROR scheduler Skipped queueing erpnext.setup.doctype.email_digest.email_digest.send because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,718 ERROR scheduler Skipped queueing erpnext.accounts.doctype.process_subscription.process_subscription.create_subscription_process because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,718 ERROR scheduler Skipped queueing frappe.deferred_insert.save_to_db because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,718 ERROR scheduler Skipped queueing frappe.desk.page.backups.backups.delete_downloadable_backups because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,718 ERROR scheduler Skipped queueing frappe.model.utils.link_count.update_link_count because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,718 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.remove_unverified_record because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,719 ERROR scheduler Skipped queueing erpnext.assets.doctype.asset.depreciation.post_depreciation_entries because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,719 ERROR scheduler Skipped queueing ecommerce_integrations.zenoti.doctype.zenoti_settings.zenoti_settings.sync_invoices because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,719 ERROR scheduler Skipped queueing erpnext.selling.doctype.quotation.quotation.set_expired_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,719 ERROR scheduler Skipped queueing ecommerce_integrations.unicommerce.status_updater.update_sales_order_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,720 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,720 ERROR scheduler Skipped queueing erpnext.crm.doctype.opportunity.opportunity.auto_close_opportunity because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,720 ERROR scheduler Skipped queueing erpnext.accounts.utils.run_ledger_health_checks because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,720 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,721 ERROR scheduler Skipped queueing ecommerce_integrations.zenoti.doctype.zenoti_settings.zenoti_settings.sync_stocks because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,721 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.collect_project_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,721 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_tool.bom_update_tool.auto_update_latest_price_in_all_boms because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,722 ERROR scheduler Skipped queueing erpnext.assets.doctype.asset_maintenance_log.asset_maintenance_log.update_asset_maintenance_log_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,722 ERROR scheduler Skipped queueing erpnext.stock.reorder_item.reorder_item because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,722 ERROR scheduler Skipped queueing erpnext.support.doctype.service_level_agreement.service_level_agreement.check_agreement_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,722 ERROR scheduler Skipped queueing erpnext.accounts.utils.auto_create_exchange_rate_revaluation_daily because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,723 ERROR scheduler Skipped queueing frappe.desk.form.document_follow.send_hourly_updates because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,723 ERROR scheduler Skipped queueing payments.payment_gateways.doctype.razorpay_settings.razorpay_settings.capture_payment because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,723 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.update_project_sales_billing because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,723 ERROR scheduler Skipped queueing erpnext.crm.utils.open_leads_opportunities_based_on_todays_event because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,723 ERROR scheduler Skipped queueing erpnext.projects.doctype.task.task.set_tasks_as_overdue because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,724 ERROR scheduler Skipped queueing erpnext.assets.doctype.asset.asset.update_maintenance_status because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,724 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for erpnext.localhost
-2025-09-30 00:34:00,724 ERROR scheduler Skipped queueing ecommerce_integrations.unicommerce.status_updater.update_shipping_package_status because it was found in queue for erpnext.localhost
-2025-09-30 11:54:00,752 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 15:30:01,096 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -259,7 +64,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 11:58:02,582 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 15:34:00,263 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -325,7 +130,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:02:00,832 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 15:38:00,584 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -391,7 +196,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:06:01,089 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 15:42:00,886 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -457,7 +262,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:10:00,327 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 15:46:00,322 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -523,7 +328,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:14:00,596 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 15:50:00,583 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -589,7 +394,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:18:00,807 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 15:54:00,726 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -655,7 +460,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 14:55:08,262 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 15:58:01,003 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -721,7 +526,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 14:58:00,600 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 16:02:00,297 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -787,7 +592,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:02:00,817 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 16:06:00,731 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -853,7 +658,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:06:01,094 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 16:10:00,901 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -919,7 +724,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:10:00,259 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 16:14:00,370 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -985,7 +790,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:14:01,939 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 16:18:00,686 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -1051,7 +856,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:18:01,278 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 16:22:00,983 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -1117,7 +922,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:22:00,558 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 16:26:01,156 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -1183,7 +988,337 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:26:00,875 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-09-30 16:30:00,556 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
+    if job := get_job(job_id):
+              ~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
+    job.refresh()
+    ~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
+    data = self.connection.hgetall(self.key)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-30 16:34:00,780 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
+    if job := get_job(job_id):
+              ~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
+    job.refresh()
+    ~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
+    data = self.connection.hgetall(self.key)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-30 16:38:01,054 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
+    if job := get_job(job_id):
+              ~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
+    job.refresh()
+    ~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
+    data = self.connection.hgetall(self.key)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-30 16:42:00,225 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
+    if job := get_job(job_id):
+              ~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
+    job.refresh()
+    ~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
+    data = self.connection.hgetall(self.key)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-30 16:46:00,512 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
+    if job := get_job(job_id):
+              ~~~~~~~^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
+    job.refresh()
+    ~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
+    data = self.connection.hgetall(self.key)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-30 16:50:00,736 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(

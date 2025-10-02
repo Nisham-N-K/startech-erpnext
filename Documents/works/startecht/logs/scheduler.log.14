@@ -1,4 +1,4 @@
-2025-09-30 15:42:00,886 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 12:22:21,795 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -64,7 +64,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:46:00,322 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 15:14:52,748 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -130,7 +130,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:50:00,583 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 15:18:01,816 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -196,7 +196,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:54:00,726 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 15:22:00,535 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -262,7 +262,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:58:01,003 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 15:26:00,647 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -328,7 +328,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:02:00,297 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 15:30:00,890 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -394,7 +394,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:06:00,731 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 15:34:01,176 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -460,7 +460,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:10:00,901 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 15:38:00,289 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -526,7 +526,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:14:00,370 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 16:20:13,267 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -592,7 +592,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:18:00,686 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 16:22:02,160 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -658,7 +658,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:22:00,983 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 16:26:00,433 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -724,7 +724,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:26:01,156 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 16:30:00,710 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -790,7 +790,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:30:00,556 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 16:34:00,846 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -856,7 +856,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:34:00,780 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 16:38:01,100 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -922,7 +922,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:38:01,054 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 16:42:00,475 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -988,7 +988,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:42:00,225 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 16:46:00,738 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -1054,7 +1054,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:46:00,512 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 16:50:00,873 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -1120,7 +1120,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:50:00,736 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 17:50:57,255 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -1186,7 +1186,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:54:00,958 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 19:23:30,307 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -1252,7 +1252,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 16:58:00,273 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 19:57:32,803 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
@@ -1318,7 +1318,7 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 17:02:00,511 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
+2025-10-01 19:58:01,087 ERROR scheduler Exception in Enqueue Events for Site erpnext.localhost
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
     sock = self.retry.call_with_retry(
