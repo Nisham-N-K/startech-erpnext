@@ -1,4 +1,4 @@
-2025-09-30 23:00:12,033 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 20:38:01,110 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -62,7 +62,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 23:02:00,279 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 20:42:00,270 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -126,7 +126,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 23:08:55,082 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 20:46:00,785 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -190,7 +190,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 23:37:53,524 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 20:50:01,096 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -254,7 +254,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 23:38:00,756 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 20:54:00,117 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -318,7 +318,71 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 06:43:03,363 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 20:58:00,350 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (2002, "Can't connect to server on '127.0.0.1' (36)")
+2025-10-01 21:02:00,384 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -382,7 +446,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 07:34:57,625 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 21:06:00,736 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -446,7 +510,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 12:03:32,828 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 21:10:00,044 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -510,7 +574,263 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 12:22:21,597 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 21:14:00,345 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (2002, "Can't connect to server on '127.0.0.1' (36)")
+2025-10-01 21:18:00,398 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (2002, "Can't connect to server on '127.0.0.1' (36)")
+2025-10-01 21:22:00,456 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (2002, "Can't connect to server on '127.0.0.1' (36)")
+2025-10-01 21:26:00,499 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (2002, "Can't connect to server on '127.0.0.1' (36)")
+2025-10-01 21:30:00,526 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -574,7 +894,71 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 15:14:52,649 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 21:34:00,910 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+Traceback (most recent call last):
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (2002, "Can't connect to server on '127.0.0.1' (36)")
+2025-10-01 21:38:01,129 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -638,7 +1022,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 15:18:00,884 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 21:42:00,443 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -702,7 +1086,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 15:22:00,444 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 21:46:00,601 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -766,391 +1150,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 15:26:00,724 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
-    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
-    return self.redis.get_value(key, shared=shared, generator=generator)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
-    val = generator()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
-    return dispatch(args[0])(*args, **kw)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
-    controller = get_controller(doctype)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
-    result = self.get_values(
-    	doctype,
-    ...<13 lines>...
-    	wait=wait,
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
-    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
-    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
-    self.connect()
-    ~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
-    self.get_connection()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
-    conn = self._get_connection()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
-    return self.create_connection()
-           ~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
-    return MySQLdb.connect(**self.get_connection_settings())
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
-    return Connection(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
-    super().__init__(*args, **kwargs2)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 15:30:00,983 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
-    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
-    return self.redis.get_value(key, shared=shared, generator=generator)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
-    val = generator()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
-    return dispatch(args[0])(*args, **kw)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
-    controller = get_controller(doctype)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
-    result = self.get_values(
-    	doctype,
-    ...<13 lines>...
-    	wait=wait,
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
-    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
-    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
-    self.connect()
-    ~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
-    self.get_connection()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
-    conn = self._get_connection()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
-    return self.create_connection()
-           ~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
-    return MySQLdb.connect(**self.get_connection_settings())
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
-    return Connection(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
-    super().__init__(*args, **kwargs2)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 15:34:01,091 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
-    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
-    return self.redis.get_value(key, shared=shared, generator=generator)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
-    val = generator()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
-    return dispatch(args[0])(*args, **kw)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
-    controller = get_controller(doctype)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
-    result = self.get_values(
-    	doctype,
-    ...<13 lines>...
-    	wait=wait,
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
-    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
-    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
-    self.connect()
-    ~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
-    self.get_connection()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
-    conn = self._get_connection()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
-    return self.create_connection()
-           ~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
-    return MySQLdb.connect(**self.get_connection_settings())
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
-    return Connection(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
-    super().__init__(*args, **kwargs2)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 15:38:00,298 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
-    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
-    return self.redis.get_value(key, shared=shared, generator=generator)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
-    val = generator()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
-    return dispatch(args[0])(*args, **kw)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
-    controller = get_controller(doctype)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
-    result = self.get_values(
-    	doctype,
-    ...<13 lines>...
-    	wait=wait,
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
-    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
-    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
-    self.connect()
-    ~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
-    self.get_connection()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
-    conn = self._get_connection()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
-    return self.create_connection()
-           ~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
-    return MySQLdb.connect(**self.get_connection_settings())
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
-    return Connection(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
-    super().__init__(*args, **kwargs2)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 16:20:13,356 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
-    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
-    return self.redis.get_value(key, shared=shared, generator=generator)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
-    val = generator()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
-    return dispatch(args[0])(*args, **kw)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
-    controller = get_controller(doctype)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
-    result = self.get_values(
-    	doctype,
-    ...<13 lines>...
-    	wait=wait,
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
-    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
-    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
-    self.connect()
-    ~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
-    self.get_connection()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
-    conn = self._get_connection()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
-    return self.create_connection()
-           ~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
-    return MySQLdb.connect(**self.get_connection_settings())
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
-    return Connection(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
-    super().__init__(*args, **kwargs2)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 16:22:02,190 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
-    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
-    return self.redis.get_value(key, shared=shared, generator=generator)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
-    val = generator()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
-    return dispatch(args[0])(*args, **kw)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
-    controller = get_controller(doctype)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
-    result = self.get_values(
-    	doctype,
-    ...<13 lines>...
-    	wait=wait,
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
-    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
-    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
-    self.connect()
-    ~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
-    self.get_connection()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
-    conn = self._get_connection()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
-    return self.create_connection()
-           ~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
-    return MySQLdb.connect(**self.get_connection_settings())
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
-    return Connection(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
-    super().__init__(*args, **kwargs2)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 16:26:00,443 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 21:50:00,922 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():

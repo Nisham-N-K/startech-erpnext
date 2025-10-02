@@ -1,4 +1,4 @@
-2025-09-17 19:58:00,108 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:02:00,276 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -59,7 +59,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:02:00,182 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:06:00,343 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -120,7 +120,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:06:00,214 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:10:00,409 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -181,7 +181,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:10:00,281 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:14:00,462 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -242,7 +242,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:14:00,353 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:18:00,527 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -303,7 +303,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:18:00,416 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:22:00,552 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -364,7 +364,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:22:00,488 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:26:00,621 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -425,7 +425,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:26:00,509 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:30:00,640 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -486,7 +486,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:30:00,577 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:34:01,406 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -547,7 +547,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:34:00,676 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:38:00,461 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -608,7 +608,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:38:00,733 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:42:00,530 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -669,7 +669,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:42:00,756 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:51:12,536 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -730,7 +730,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:46:00,886 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:57:24,122 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -791,7 +791,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:50:00,932 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-17 23:58:00,158 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -852,7 +852,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:54:01,055 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-18 00:05:25,848 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -913,7 +913,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 20:58:00,100 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-18 00:06:00,937 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -974,7 +974,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 21:02:00,140 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-18 00:10:00,973 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1035,7 +1035,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 21:06:00,252 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-18 00:14:01,015 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1096,7 +1096,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 21:10:00,329 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-18 00:18:00,039 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1157,7 +1157,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 21:14:00,359 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-18 00:22:00,109 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1218,7 +1218,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-17 21:18:00,407 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-18 00:26:00,187 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():

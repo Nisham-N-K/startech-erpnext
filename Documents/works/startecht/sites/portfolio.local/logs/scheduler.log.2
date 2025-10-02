@@ -1,4 +1,4 @@
-2025-10-01 16:30:00,562 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 21:54:00,459 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -10,7 +10,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -28,10 +29,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -62,7 +64,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 16:34:00,854 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 21:58:00,794 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -74,7 +76,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,10 +95,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -126,7 +130,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 16:38:00,989 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 22:02:00,837 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -138,7 +142,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -156,10 +161,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -190,7 +196,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 16:42:00,482 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 22:06:00,338 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -202,7 +208,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -220,10 +227,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -254,7 +262,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 16:46:00,747 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 22:10:00,829 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -266,7 +274,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -284,10 +293,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -318,7 +328,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 16:50:00,881 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 22:14:01,104 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -330,7 +340,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -348,10 +359,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -382,7 +394,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 17:50:57,355 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 22:18:00,136 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -394,7 +406,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -412,10 +425,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -446,7 +460,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 19:23:30,340 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 22:22:00,412 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -458,7 +472,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -476,10 +491,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -510,7 +526,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 19:57:32,674 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 22:26:00,709 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -522,7 +538,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -540,10 +557,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -574,7 +592,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 19:58:00,821 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 22:30:00,040 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -586,7 +604,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -604,10 +623,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -638,7 +658,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 20:02:00,246 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 22:34:00,405 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -650,7 +670,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -668,10 +689,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -702,7 +724,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 20:06:00,697 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 23:00:50,233 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -714,7 +736,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -732,10 +755,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -766,7 +790,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 20:10:01,027 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-01 23:47:00,702 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -778,7 +802,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -796,10 +821,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -830,7 +856,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 20:14:00,326 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-02 01:48:02,187 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -842,7 +868,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -860,10 +887,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -894,7 +922,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 20:18:00,889 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-02 02:49:21,966 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -906,7 +934,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -924,10 +953,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -958,7 +988,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 20:22:00,916 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-02 03:04:07,166 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -970,7 +1000,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -988,10 +1019,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -1022,7 +1054,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 20:26:00,464 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-02 04:05:14,673 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1034,7 +1066,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1052,10 +1085,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -1086,7 +1120,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 20:30:00,704 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-02 04:36:02,280 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1098,7 +1132,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1116,10 +1151,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,
@@ -1150,7 +1186,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-10-01 20:34:00,727 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-10-02 05:37:08,429 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1162,7 +1198,8 @@ Traceback (most recent call last):
     scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
                              ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
+    if not (system_settings := getattr(frappe.local, "system_settings", None)):
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1180,10 +1217,11 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
     controller = get_controller(doctype)
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+    """
+    
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+    For `custom` type, return `frappe.model.document.Document`.
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
     result = self.get_values(
     	doctype,

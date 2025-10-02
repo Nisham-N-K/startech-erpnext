@@ -1,4 +1,4 @@
-2025-09-29 23:02:00,903 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 11:34:00,276 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -59,7 +59,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-29 23:06:00,943 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 11:38:00,310 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -120,7 +120,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-29 23:10:01,059 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 11:42:00,346 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -181,7 +181,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-29 23:14:00,126 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 11:46:00,419 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -242,7 +242,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 00:33:54,610 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 11:50:00,483 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -303,7 +303,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 00:34:00,732 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 11:54:00,686 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -319,7 +319,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -364,7 +367,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 02:43:27,839 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 11:58:02,587 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -380,7 +383,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -425,7 +431,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 04:14:37,886 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 12:02:00,677 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -441,7 +447,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -486,7 +495,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 06:02:06,907 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 12:06:00,859 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -502,7 +511,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -547,7 +559,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:18:28,616 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 12:10:00,215 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -563,7 +575,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -608,7 +623,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:22:00,657 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 12:14:00,603 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -624,7 +639,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -669,7 +687,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:26:00,707 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 12:18:00,815 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -685,7 +703,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -730,7 +751,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:30:00,746 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 14:55:08,354 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -746,7 +767,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -791,7 +815,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:34:00,821 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 14:58:00,608 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -807,7 +831,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -852,7 +879,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:38:00,919 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 15:02:00,824 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -868,7 +895,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -913,7 +943,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:42:00,960 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 15:06:01,102 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -929,7 +959,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -974,7 +1007,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:46:00,973 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 15:10:00,133 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -990,7 +1023,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -1035,7 +1071,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:50:00,049 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 15:14:00,422 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1051,7 +1087,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -1096,7 +1135,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:54:00,111 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 15:18:00,982 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1112,7 +1151,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
@@ -1157,7 +1199,7 @@ Traceback (most recent call last):
     super().__init__(*args, **kwargs2)
     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 07:58:00,199 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
+2025-09-30 15:22:00,314 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
     if is_scheduler_inactive():
@@ -1173,68 +1215,10 @@ Traceback (most recent call last):
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
-    val = generator()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
-    return dispatch(args[0])(*args, **kw)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
-    controller = get_controller(doctype)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
-    result = self.get_values(
-    	doctype,
-    ...<13 lines>...
-    	wait=wait,
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
-    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
-    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
-    self.connect()
-    ~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
-    self.get_connection()
-    ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
-    conn = self._get_connection()
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
-    return self.create_connection()
-           ~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
-    return MySQLdb.connect(**self.get_connection_settings())
-           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
-    return Connection(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
-    super().__init__(*args, **kwargs2)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
-2025-09-30 09:09:40,569 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
-    if is_scheduler_inactive():
-       ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
-    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
-                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
-    system_settings = frappe.client_cache.get_doc("System Settings")
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
-    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
-           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
     val = generator()
   File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
     return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))

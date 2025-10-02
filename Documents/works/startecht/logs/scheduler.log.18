@@ -1,1356 +1,1216 @@
-2025-09-30 00:34:00,727 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for yoursite.local
-2025-09-30 00:34:00,729 ERROR scheduler Skipped queueing frappe.desk.notifications.clear_notifications because it was found in queue for yoursite.local
-2025-09-30 00:34:00,729 ERROR scheduler Skipped queueing frappe.oauth.delete_oauth2_data because it was found in queue for yoursite.local
-2025-09-30 00:34:00,729 ERROR scheduler Skipped queueing frappe.core.doctype.prepared_report.prepared_report.expire_stalled_report because it was found in queue for yoursite.local
-2025-09-30 00:34:00,730 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for yoursite.local
-2025-09-30 00:34:00,730 ERROR scheduler Skipped queueing frappe.desk.page.backups.backups.delete_downloadable_backups because it was found in queue for yoursite.local
-2025-09-30 00:34:00,730 ERROR scheduler Skipped queueing frappe.sessions.clear_expired_sessions because it was found in queue for yoursite.local
-2025-09-30 00:34:00,730 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.remove_unverified_record because it was found in queue for yoursite.local
-2025-09-30 00:34:00,731 ERROR scheduler Skipped queueing frappe.desk.form.document_follow.send_hourly_updates because it was found in queue for yoursite.local
-2025-09-30 00:34:00,731 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for yoursite.local
-2025-09-30 00:34:00,731 ERROR scheduler Skipped queueing frappe.automation.doctype.auto_repeat.auto_repeat.make_auto_repeat_entry because it was found in queue for yoursite.local
-2025-09-30 00:34:00,731 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for yoursite.local
-2025-09-30 00:34:00,732 ERROR scheduler Skipped queueing frappe.core.doctype.user_invitation.user_invitation.mark_expired_invitations because it was found in queue for yoursite.local
-2025-09-30 11:54:00,673 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
+2025-09-30 16:10:01,045 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 622, in can_read
-    return self._parser.can_read(timeout)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 99, in can_read
-    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 108, in read_from_socket
-    bufflen = self._sock.recv_into(self._buffer)
-ConnectionResetError: [Errno 54] Connection reset by peer
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1536, in get_connection
-    if connection.can_read() and self.cache is None:
-       ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 625, in can_read
-    raise ConnectionError(f"Error while reading from {host_error}: {e.args}")
-redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000: (54, 'Connection reset by peer')
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:14:00,099 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1540, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 11:58:02,656 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:18:00,400 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:02:00,766 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:22:00,849 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:06:00,969 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:26:01,165 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:10:00,206 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:30:00,566 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:14:00,491 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:34:00,589 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 12:18:00,715 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:38:00,800 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 14:55:08,346 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:42:00,236 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 14:58:00,486 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:46:00,398 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:02:00,741 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:50:00,632 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:06:00,960 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:54:01,038 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:10:00,372 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 16:58:00,280 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:14:00,882 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 17:02:00,410 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:18:01,123 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 17:06:00,643 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:22:00,442 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 17:10:01,027 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:26:00,724 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 17:14:00,159 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:30:00,996 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 17:18:00,483 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:34:00,403 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
+2025-09-30 17:22:28,853 ERROR scheduler Exception in Enqueue Events for Site portfolio.local
 Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:38:00,719 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 231, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 83, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/model/base_document.py", line 94, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
     )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
-2025-09-30 15:42:01,008 ERROR scheduler Exception in Enqueue Events for Site yoursite.local
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
-    sock = self.retry.call_with_retry(
-        lambda: self._connect(), lambda error: self.disconnect(error)
-    )
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
-    return do()
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
-    lambda: self._connect(), lambda error: self.disconnect(error)
-            ~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
-    raise err
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
-    sock.connect(socket_address)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
-    enqueue_events()
-    ~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
-    if job_type.enqueue():
-       ~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
-    if not self.is_job_in_queue():
-           ~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
-    return is_job_enqueued(self.rq_job_id)
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
-    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
-           ~~~~~~~~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
-    if job := get_job(job_id):
-              ~~~~~~~^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
-    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
-    job.refresh()
-    ~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
-    data = self.connection.hgetall(self.key)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
-    return self.execute_command("HGETALL", name, keys=[name])
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
-    return self._execute_command(*args, **options)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
-    conn = self.connection or pool.get_connection()
-                              ~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
-    return func(*args, **kwargs)
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
-    connection.connect()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
-    self.connect_check_health(check_health=True)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
-    raise ConnectionError(self._error_message(e))
-redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 109, in get_connection
+    conn = self._get_connection()
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 114, in _get_connection
+    return self.create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/apps/frappe/frappe/database/mariadb/mysqlclient.py", line 117, in create_connection
+    return MySQLdb.connect(**self.get_connection_settings())
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/mohammednishamnk/Documents/works/startecht/env/lib/python3.13/site-packages/MySQLdb/connections.py", line 200, in __init__
+    super().__init__(*args, **kwargs2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1045, "Access denied for user '_35acf0798e661fd5'@'localhost' (using password: YES)")
